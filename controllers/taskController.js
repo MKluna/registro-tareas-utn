@@ -27,11 +27,7 @@ async function getFilteredTasks(req, res) {
 
 async function createTask(req, res) {
   const { title, description, completed } = req.body;
-
-
   const userId = req.user.userId;
-  console.log("🚀 ~ file: taskController.js:33 ~ createTask ~ userId:", userId);
-
   try {
     const task = await Task.create({
       title,
